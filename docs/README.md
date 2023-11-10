@@ -3,9 +3,9 @@
 ## 구현할 기능 목록
 
 - Constant
-- [ ] INPUT 클래스
-- [ ] OUTPUT 클래스
-- [ ] ERROR 클래스
+- [ ] Constant 클래스
+
+  - [ ] INPUT, OUTPUT, ERROR, MENU, EVENT, BADGE
 
 - Validation
 - [ ] Validation 클래스
