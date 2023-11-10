@@ -21,7 +21,13 @@ export const OUTPUT = {
   linebreak: "\n",
 };
 
-export const ERROR = {};
+export const ERROR = {
+  date_error:
+    "[ERROR] 잘못된 방문 날짜입니다. 방문 날짜는 1-31 사이의 정수입니다.",
+  menu_form_error:
+    "[ERROR] 잘못된 메뉴 형식입니다. <메뉴이름>-<개수> 의 형식이어야 합니다.",
+  menu_name_error: "[ERROR] 잘못된 메뉴 이름입니다.",
+};
 
 export const MENU = {
   mushroom_soup: "양송이수프",
