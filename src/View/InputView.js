@@ -1,5 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
-import { INPUT, ERROR } from "../Constants/Constants";
+import { INPUT, ERROR } from "../Constants/Constants.js";
+import Validation from "../Validation/Validation.js";
 
 const InputView = {
   async inputDate() {
@@ -16,21 +17,22 @@ const InputView = {
 
   async inputOrder() {
     const input = await Console.readLineAsync(INPUT.order_request);
-    const orders = input.split(",");
-    const orderDetails = {};
-    orders.forEach((order) => {
-      const [menu, amount] = order.split("-");
-      const menuName = menu.trim();
-      const orderAmount = parseInt(amount.trim());
-      orderDetails[menuName] = orderAmount;
-    });
     try {
-      Validation.isValidOrder(orderDetails);
-      return orderDetails;
+      Validation.isValidOrder(input);
+      return this.parseStringToOrder(input);
     } catch {
       Console.print(ERROR.order_error);
-      await this.inputOrder();
+      return await this.inputOrder();
     }
+  },
+
+  parseStringToOrder(input) {
+    const orderDetails = {};
+    input.split(",").forEach((order) => {
+      const [menu, amount] = order.split("-").map((item) => item.trim());
+      orderDetails[menu] = parseInt(amount);
+    });
+    return orderDetails;
   },
 };
 export default InputView;

@@ -19,6 +19,9 @@ export const OUTPUT = {
   won: "원",
   unit: "개",
   linebreak: "\n",
+  event_caution: "이벤트는 총 주문 금액이 10,000원 이상부터 적용됩니다.",
+  order_caution:
+    "음료만 주문할 수 없고 메뉴는 한번에 최대 20개까지 주문할 수 있습니다.",
 };
 
 export const ERROR = {
@@ -27,18 +30,26 @@ export const ERROR = {
 };
 
 export const MENU = {
-  mushroom_soup: "양송이수프",
-  tapas: "타파스",
-  caesar_salad: "시저샐러드",
-  t_born_steak: "티본스테이크",
-  barbeque_rib: "바비큐립",
-  seafood_pasta: "해산물파스타",
-  christmas_pasta: "크리스마스파스타",
-  choco_cake: "초코케이크",
-  icecream: "아이스크림",
-  zero_coke: "제로콜라",
-  red_wine: "레드와인",
-  champagne: "샴페인",
+  APPETIZER: {
+    mushroom_soup: "양송이수프",
+    tapas: "타파스",
+    caesar_salad: "시저샐러드",
+  },
+  MAIN: {
+    t_born_steak: "티본스테이크",
+    barbeque_rib: "바비큐립",
+    seafood_pasta: "해산물파스타",
+    christmas_pasta: "크리스마스파스타",
+  },
+  DESSERT: {
+    choco_cake: "초코케이크",
+    icecream: "아이스크림",
+  },
+  DRINK: {
+    zero_coke: "제로콜라",
+    red_wine: "레드와인",
+    champagne: "샴페인",
+  },
 };
 
 export const EVENT = {

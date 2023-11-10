@@ -16,7 +16,11 @@
 - [ ] Discount 클래스
 
 - View
-- [ ] InputView 클래스
+- [x] InputView 클래스
+  - [x] inputDate : 방문 날짜 입력
+    - [x] isValidDate : 1이상 31이하의 정수가 아닌 경우 에러메시지를 출력하고 다시 입력받도록
+  - [x] inputOrder : 주문 메뉴와 수량 입력
+    - [x] isValidOrder : 메뉴판에 없는 메뉴를 입력하거나, 1 이하의 메뉴 개수를 입력하거나, 메뉴 형식이 다르거나, 중복 메뉴를 입력했거나, 음료만 주문했거나, 한번에 20개 이상의 메뉴를 주문한 경우 에러메시지를 출력하고 다시 입력받도록
 - [ ] OutputView 클래스
 
 - Controller
