@@ -6,8 +6,8 @@ export const INPUT = {
 };
 
 export const OUTPUT = {
-  event_planner: "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.",
-  event_preview: "12월 3일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!",
+  event_planner: "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.\n",
+  event_preview: "12월 3일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n\n",
   order_menu: "<주문 메뉴>",
   order_amount: "<할인 전 총주문 금액>",
   promotion_menu: "<증정 메뉴>",
@@ -22,11 +22,8 @@ export const OUTPUT = {
 };
 
 export const ERROR = {
-  date_error:
-    "[ERROR] 잘못된 방문 날짜입니다. 방문 날짜는 1-31 사이의 정수입니다.",
-  menu_form_error:
-    "[ERROR] 잘못된 메뉴 형식입니다. <메뉴이름>-<개수> 의 형식이어야 합니다.",
-  menu_name_error: "[ERROR] 잘못된 메뉴 이름입니다.",
+  date_error: "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.",
+  order_error: "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.",
 };
 
 export const MENU = {
