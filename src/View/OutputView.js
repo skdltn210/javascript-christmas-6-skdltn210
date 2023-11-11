@@ -27,7 +27,7 @@ const OutputView = {
 
   printPromotionMenu() {
     Console.print(OUTPUT.promotion_menu);
-    Console.print(MENU.DRINK.champagne + " 1" + OUTPUT.unit);
+    Console.print(MENU.DRINK.champagne + OUTPUT.one + OUTPUT.unit);
   },
 
   printPromotionDetails(promotion) {
