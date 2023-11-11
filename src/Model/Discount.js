@@ -6,7 +6,7 @@ class Discount {
   }
 
   calculateChristmasDiscount() {
-    christmasDiscount = 0;
+    let christmasDiscount = 0;
     if (this.#expectedVisitDate <= 25) {
       christmasDiscount = 1000 + 100 * (this.#expectedVisitDate - 1);
     }
@@ -14,8 +14,8 @@ class Discount {
   }
 
   calculateWeekdayDiscount(dessertCount) {
-    weekdayDiscount = 0;
-    isWeekday = !(
+    let weekdayDiscount = 0;
+    let isWeekday = !(
       this.#expectedVisitDate % 7 == 1 || this.#expectedVisitDate % 7 == 2
     );
     if (isWeekday) {
@@ -25,8 +25,8 @@ class Discount {
   }
 
   calculateWeekendDiscount(mainCount) {
-    weekendDiscount = 0;
-    isWeekend =
+    let weekendDiscount = 0;
+    let isWeekend =
       this.#expectedVisitDate % 7 == 1 || this.#expectedVisitDate % 7 == 2;
     if (isWeekend) {
       weekendDiscount = 2023 * mainCount;
@@ -35,8 +35,9 @@ class Discount {
   }
 
   calculateSpecialDiscount() {
-    specialDiscount = 0;
-    isStar = this.#expectedVisitDate % 7 == 3 || this.#expectedVisitDate == 25;
+    let specialDiscount = 0;
+    let isStar =
+      this.#expectedVisitDate % 7 == 3 || this.#expectedVisitDate == 25;
     if (isStar) {
       specialDiscount = 1000;
     }

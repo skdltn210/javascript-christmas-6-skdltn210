@@ -40,6 +40,10 @@
 - Controller
 - [ ]EventPlannerController 클래스
 
+- Test
+- [x] InputTest
+- [x] DiscountTest
+
 ## 추가로 고려할 사항
 
 - [ ] 클래스(객체)를 분리하는 연습
