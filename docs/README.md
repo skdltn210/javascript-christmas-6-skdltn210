@@ -32,6 +32,10 @@
   - [x] printOrderAmount : 할인 전 총주문 금액 출력
   - [x] printPromotionMenu : 증정 메뉴 출력
   - [x] printPromotionDetails : 혜택 내역 출력
+  - [x] printChristmasDiscount : 크리스마스 디데이 할인 출력
+  - [x] printWeekdayDiscount : 평일 할인 출력
+  - [x] printWeekendDiscount : 주말 할인 출력
+  - [x] printPromotion : 증정 이벤트 출력
   - [x] printTotalBenefit : 총혜택 금액 출력
   - [x] printExpectedPayment : 할인 후 예상 결제 금액 출력
   - [x] printEventBadge : 이벤트 뱃지 출력

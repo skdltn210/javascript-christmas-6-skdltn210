@@ -30,12 +30,24 @@ const OutputView = {
     Console.print(MENU.DRINK.champagne + OUTPUT.one + OUTPUT.unit);
   },
 
-  printPromotionDetails(promotion) {
+  printPromotionDetails() {
     Console.print(OUTPUT.promotion_details);
-    Console.print(EVENT.christmas_discount + promotion[0] + OUTPUT.won);
-    Console.print(EVENT.weekday_discount + promotion[1] + OUTPUT.won);
-    Console.print(EVENT.special_discount + promotion[2] + OUTPUT.won);
-    Console.print(EVENT.promotion + promotion[3] + OUTPUT.won);
+  },
+
+  printChristmasDiscount(christmasDiscount) {
+    Console.print(EVENT.christmas_discount + christmasDiscount + OUTPUT.won);
+  },
+
+  printWeekdayDiscount(weekdayDiscount) {
+    Console.print(EVENT.weekday_discount + weekdayDiscount + OUTPUT.won);
+  },
+
+  printWeekendDiscount(weekendDiscount) {
+    Console.print(EVENT.weekday_discount + weekendDiscount + OUTPUT.won);
+  },
+
+  printPromotion(promotion) {
+    Console.print(EVENT.promotion + promotion + OUTPUT.won);
   },
 
   printTotalBenefit(totalBenefit) {
