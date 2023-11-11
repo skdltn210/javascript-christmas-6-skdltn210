@@ -23,7 +23,7 @@ describe("입력 테스트", () => {
     ["양송이수프-1, 양송이수프-1"],
     ["샴페인-2"],
     ["양송이수프-21"],
-  ])("올바른 주문 입력했는지 판단하는 isValidOrder 함수", async (inputs) => {
+  ])("올바른 주문을 입력했는지 판단하는 isValidOrder 함수", async (inputs) => {
     await expect(() => Validation.isValidOrder(inputs)).toThrow();
   });
 });

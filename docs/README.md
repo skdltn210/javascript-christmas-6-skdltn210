@@ -11,9 +11,12 @@
 - [x] Validation 클래스
 
 - Model
+- [x] Discount 클래스
+  - [x] calculateChristmasDiscount : 크리스마스 디데이 할인 금액 계산
+  - [x] calculateWeekdayDiscount : 주중 할인 금액 계산
+  - [x] calculateWeekendDiscount : 주말 할인 금액 계산
+  - [x] calculateSpecialDiscount : 특별 할인 금액 계산
 - [ ] OrderMenu 클래스
-- [ ] ExpectedVisitDate 클래스
-- [ ] Discount 클래스
 
 - View
 - [x] InputView 클래스
