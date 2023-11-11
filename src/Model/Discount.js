@@ -51,7 +51,7 @@ class Discount {
       this.calculateChristmasDiscount() +
       this.calculateWeekdayDiscount(dessertCount) +
       this.calculateWeekendDiscount(mainCount) +
-      this.calculateChristmasDiscount();
+      this.calculateSpecialDiscount();
     return totalBenefit;
   }
 

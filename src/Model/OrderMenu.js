@@ -32,12 +32,38 @@ class OrderMenu {
     return menuAmount;
   }
 
-  checkShampagneGift() {
+  checkChampagneGift() {
     const totalOrderAmount = this.calculateTotalOrderAmount();
     if (totalOrderAmount >= 120000) {
       return true;
     }
     return false;
+  }
+
+  getOrder() {
+    return this.#orderMenu;
+  }
+
+  countDessert() {
+    const dessertCategory = MENU.DESSERT;
+    let countDessert = 0;
+    Object.keys(dessertCategory).forEach((dessertName) => {
+      if (this.#orderMenu.hasOwnProperty(dessertName)) {
+        countDessert += this.#orderMenu[dessertName];
+      }
+    });
+    return countDessert;
+  }
+
+  countDrink() {
+    const drinkCategory = MENU.DRINK;
+    let countDrink = 0;
+    Object.keys(drinkCategory).forEach((drinkName) => {
+      if (this.#orderMenu.hasOwnProperty(drinkName)) {
+        countDrink += this.#orderMenu[drinkName];
+      }
+    });
+    return countDrink;
   }
 }
 export default OrderMenu;
