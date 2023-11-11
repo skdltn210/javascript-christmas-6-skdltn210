@@ -2,7 +2,7 @@ import { MENU } from "../Constants/Constants.js";
 
 class Validation {
   static isValidDate(date) {
-    validDate = Number.isInteger(date) && date >= 1 && date <= 31;
+    let validDate = Number.isInteger(date) && date >= 1 && date <= 31;
     if (!validDate) {
       throw new Error();
     }
