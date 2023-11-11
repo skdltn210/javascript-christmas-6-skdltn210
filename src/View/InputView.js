@@ -19,7 +19,8 @@ const InputView = {
     const input = await Console.readLineAsync(INPUT.order_request);
     try {
       Validation.isValidOrder(input);
-      return this.parseStringToOrder(input);
+      const orderDetails = this.parseStringToOrder(input);
+      return orderDetails;
     } catch {
       Console.print(ERROR.order_error);
       return await this.inputOrder();

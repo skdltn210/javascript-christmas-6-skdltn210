@@ -3,12 +3,12 @@
 ## 구현할 기능 목록
 
 - Constant
-- [ ] Constant 클래스
+- [x] Constant 클래스
 
-  - [ ] INPUT, OUTPUT, ERROR, MENU, EVENT, BADGE
+  - [x] INPUT, OUTPUT, ERROR, MENU, EVENT, BADGE
 
 - Validation
-- [ ] Validation 클래스
+- [x] Validation 클래스
 
 - Model
 - [ ] OrderMenu 클래스
@@ -21,7 +21,18 @@
     - [x] isValidDate : 1이상 31이하의 정수가 아닌 경우 에러메시지를 출력하고 다시 입력받도록
   - [x] inputOrder : 주문 메뉴와 수량 입력
     - [x] isValidOrder : 메뉴판에 없는 메뉴를 입력하거나, 1 이하의 메뉴 개수를 입력하거나, 메뉴 형식이 다르거나, 중복 메뉴를 입력했거나, 음료만 주문했거나, 한번에 20개 이상의 메뉴를 주문한 경우 에러메시지를 출력하고 다시 입력받도록
-- [ ] OutputView 클래스
+- [x] OutputView 클래스
+
+  - [x] printEventPlanner : 이벤트 플래너 인사 출력
+  - [x] printEventPreview : 이벤트 미리보기 메시지 출력
+  - [x] printOrderMenu : 주문 메뉴 출력
+  - [x] printOrderAmount : 할인 전 총주문 금액 출력
+  - [x] printPromotionMenu : 증정 메뉴 출력
+  - [x] printPromotionDetails : 혜택 내역 출력
+  - [x] printTotalBenefit : 총혜택 금액 출력
+  - [x] printExpectedPayment : 할인 후 예상 결제 금액 출력
+  - [x] printEventBadge : 이벤트 뱃지 출력
+  - [x] printNone : '없음' 출력
 
 - Controller
 - [ ]EventPlannerController 클래스
