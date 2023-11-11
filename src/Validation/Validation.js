@@ -29,10 +29,10 @@ class Validation {
   }
 
   static isValidMenu(orderDetails) {
-    const appetizers = Object.values(MENU.APPETIZER);
-    const mains = Object.values(MENU.MAIN);
-    const desserts = Object.values(MENU.DESSERT);
-    const drinks = Object.values(MENU.DRINK);
+    const appetizers = Object.keys(MENU.APPETIZER);
+    const mains = Object.keys(MENU.MAIN);
+    const desserts = Object.keys(MENU.DESSERT);
+    const drinks = Object.keys(MENU.DRINK);
     return Object.keys(orderDetails).every(
       (key) =>
         appetizers.includes(key) ||
@@ -61,7 +61,7 @@ class Validation {
   }
 
   static isOnlyDrink(orderDetails) {
-    const drinks = Object.values(MENU.DRINK);
+    const drinks = Object.keys(MENU.DRINK);
     const keys = Object.keys(orderDetails);
     return !keys.every((key) => drinks.includes(key));
   }
@@ -81,7 +81,7 @@ class Validation {
   static parseStringToOrder(input) {
     const orderDetails = {};
     input.split(",").forEach((order) => {
-      const [menu, amount] = order.split("-").map((item) => item.trim());
+      const [menu, amount] = order.split("-").map((menu) => menu.trim());
       orderDetails[menu] = parseInt(amount);
     });
     return orderDetails;
