@@ -52,7 +52,7 @@ const OutputView = {
 
   printTotalBenefit(totalBenefit) {
     Console.print(OUTPUT.total_benefit);
-    Console.print(totalBenefit + OUTPUT.won);
+    Console.print(OUTPUT.minus + totalBenefit + OUTPUT.won);
   },
 
   printExpectedPayment(expectedPayment) {

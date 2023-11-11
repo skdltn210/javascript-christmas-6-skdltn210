@@ -16,6 +16,8 @@
   - [x] calculateWeekdayDiscount : 주중 할인 금액 계산
   - [x] calculateWeekendDiscount : 주말 할인 금액 계산
   - [x] calculateSpecialDiscount : 특별 할인 금액 계산
+  - [x] calculateTotalBenefit : 총 혜택 금액 계산
+  - [x] checkEventBadge : 총 혜택 금액에 따라 이벤트 뱃지 증정
 - [ ] OrderMenu 클래스
 
 - View
@@ -42,7 +44,7 @@
   - [x] printNone : '없음' 출력
 
 - Controller
-- [ ]EventPlannerController 클래스
+- [ ]EventController 클래스
 
 - Test
 - [x] InputTest

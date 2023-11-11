@@ -23,6 +23,7 @@ export const OUTPUT = {
   order_caution:
     "음료만 주문할 수 없고 메뉴는 한번에 최대 20개까지 주문할 수 있습니다.",
   one: " 1",
+  minus: "-",
 };
 
 export const ERROR = {

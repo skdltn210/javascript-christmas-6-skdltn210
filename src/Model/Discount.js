@@ -1,3 +1,4 @@
+import { BADGE } from "../Constants/Constants.js";
 class Discount {
   #expectedVisitDate;
 
@@ -42,6 +43,28 @@ class Discount {
       specialDiscount = 1000;
     }
     return specialDiscount;
+  }
+
+  calculateTotalBenefit(dessertCount, mainCount) {
+    let totalBenefit = 0;
+    totalBenefit =
+      this.calculateChristmasDiscount() +
+      this.calculateWeekdayDiscount(dessertCount) +
+      this.calculateWeekendDiscount(mainCount) +
+      this.calculateChristmasDiscount();
+    return totalBenefit;
+  }
+
+  checkEventBadge(totalBenefit) {
+    if (totalBenefit >= 20000) {
+      return BADGE.santa;
+    }
+    if (totalBenefit >= 10000) {
+      return BADGE.tree;
+    }
+    if (totalBenefit >= 5000) {
+      return BADGE.santa;
+    }
   }
 }
 export default Discount;
