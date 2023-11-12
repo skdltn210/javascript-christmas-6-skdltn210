@@ -1,4 +1,4 @@
-import { BADGE } from "../Constants/Constants.js";
+import { BADGE, OUTPUT } from "../Constants/Constants.js";
 class Discount {
   #expectedVisitDate;
 
@@ -65,6 +65,7 @@ class Discount {
     if (totalBenefit >= 5000) {
       return BADGE.santa;
     }
+    return OUTPUT.none;
   }
 }
 export default Discount;
