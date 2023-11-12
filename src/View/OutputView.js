@@ -37,7 +37,7 @@ const OutputView = {
     this.printDiscount(EVENT.christmas_discount, christmasDiscount);
     this.printDiscount(EVENT.weekday_discount, weekdayDiscount);
     this.printDiscount(EVENT.weekend_discount, weekendDiscount);
-    this.printDiscount(EVENT.special_discount, PROMOTION.special_discount_amount);
+    this.printDiscount(EVENT.special_discount, specialDiscount);
     if (isgift) {
       Console.print(EVENT.gift_event + ECT.minus + MENU.DRINK.샴페인.toLocaleString() + ECT.won);
     }

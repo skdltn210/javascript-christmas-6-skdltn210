@@ -24,7 +24,7 @@ describe("출력 테스트", () => {
     const logSpy = getLogSpy();
     const orderDetails = { 타파스: 1, 제로콜라: 1 };
 
-    const expected = ["<주문 메뉴>", "타파스 1개", "제로콜라 1개"];
+    const expected = ["<주문 메뉴>" + LINE_SEPARATOR + "타파스 1개" + LINE_SEPARATOR + "제로콜라 1개"];
 
     OutputView.printOrderMenu(orderDetails);
 
@@ -39,20 +39,11 @@ describe("출력 테스트", () => {
     const specialDiscount = 0;
     const isGift = true;
 
-    const expected = ["\n<혜택 내역>", "크리스마스 디데이 할인: -1,700원", "주말 할인: -4,046원", "증정 이벤트: -25,000원"];
+    const expected = [
+      LINE_SEPARATOR + "<혜택 내역>" + LINE_SEPARATOR + "크리스마스 디데이 할인: -1,700원" + LINE_SEPARATOR + "주말 할인: -4,046원" + LINE_SEPARATOR + "증정 이벤트: -25,000원",
+    ];
 
     OutputView.printPromotionDetails(christmasDiscount, weekdayDiscount, weekendDiscount, specialDiscount, isGift);
-
-    expectLogContains(getOutput(logSpy), expected);
-  });
-
-  test("printEventBadge 함수", () => {
-    const logSpy = getLogSpy();
-    const totalBenefit = 15000;
-
-    const expected = ["<12월 이벤트 배지>", "트리"];
-
-    OutputView.printEventBadge(totalBenefit);
 
     expectLogContains(getOutput(logSpy), expected);
   });
@@ -62,9 +53,20 @@ describe("출력 테스트", () => {
     const benefit = 10000;
     const isGift = true;
 
-    const expected = ["\n<총혜택 금액>", "-35,000원"];
+    const expected = ["<총혜택 금액>" + LINE_SEPARATOR + "-35,000원"];
 
     OutputView.printTotalBenefit(benefit, isGift);
+
+    expectLogContains(getOutput(logSpy), expected);
+  });
+
+  test("printEventBadge 함수", () => {
+    const logSpy = getLogSpy();
+    const totalBenefit = 15000;
+
+    const expected = ["<12월 이벤트 배지>" + LINE_SEPARATOR + "트리"];
+
+    OutputView.printEventBadge(totalBenefit);
 
     expectLogContains(getOutput(logSpy), expected);
   });
