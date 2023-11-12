@@ -11,7 +11,7 @@ const InputView = {
       return date;
     } catch {
       Console.print(ERROR.date_error);
-      await this.inputDate();
+      return await this.inputDate();
     }
   },
 
