@@ -54,7 +54,7 @@ const OutputView = {
       benefit += MENU.DRINK.샴페인;
     }
     Console.print(OUTPUT.total_benefit_amount);
-    benefit == 0 ? Console.print(ECT.none) : Console.print(ECT.minus + benefit.toLocaleString() + ECT.won);
+    benefit == 0 ? Console.print(benefit.toLocaleString() + ECT.won) : Console.print(ECT.minus + benefit.toLocaleString() + ECT.won);
   },
 
   printExpectedPayment(totalOrderAmount, totalBenefit) {
