@@ -1,5 +1,5 @@
 import { Console } from "@woowacourse/mission-utils";
-import { OUTPUT, EVENT } from "../Constants/Constants.js";
+import { OUTPUT, EVENT, MENU } from "../Constants/Constants.js";
 
 const OutputView = {
   printEventPlanner() {
@@ -7,7 +7,7 @@ const OutputView = {
   },
 
   printEventPreview(day) {
-    Console.print(OUTPUT.month + day + OUTPUT.event_preview);
+    Console.print(OUTPUT.december + day + OUTPUT.event_preview);
   },
 
   printOrderMenu(orderDetails) {
@@ -22,12 +22,11 @@ const OutputView = {
     Console.print(orderAmount.toLocaleString() + OUTPUT.won);
   },
 
-  printPromotionMenu() {
+  printPromotionMenu(isGift) {
     Console.print(OUTPUT.promotion_menu);
-  },
-
-  printChampagne() {
-    Console.print(OUTPUT.champagne + OUTPUT.one + OUTPUT.unit);
+    isGift
+      ? Console.print(OUTPUT.promotion_gift + OUTPUT.unit)
+      : Console.print(OUTPUT.none);
   },
 
   printPromotionDetails(
@@ -35,7 +34,7 @@ const OutputView = {
     weekdayDiscount,
     weekendDiscount,
     specialDiscount,
-    gift
+    isgift
   ) {
     Console.print(OUTPUT.promotion_details);
     let noDiscount =
@@ -43,7 +42,7 @@ const OutputView = {
       weekdayDiscount == 0 &&
       weekendDiscount == 0 &&
       specialDiscount == 0 &&
-      gift == false;
+      isgift == false;
     if (noDiscount) {
       Console.print(OUTPUT.none);
     }
@@ -79,16 +78,19 @@ const OutputView = {
           OUTPUT.won
       );
     }
-    if (gift) {
+    if (isgift) {
       Console.print(
-        EVENT.promotion + OUTPUT.minus + OUTPUT.champagne_price + OUTPUT.won
+        EVENT.promotion +
+          OUTPUT.minus +
+          MENU.DRINK.샴페인.toLocaleString() +
+          OUTPUT.won
       );
     }
   },
 
-  printTotalBenefit(benefit, gift) {
-    if (gift) {
-      benefit += 25000;
+  printTotalBenefit(benefit, isgift) {
+    if (isgift) {
+      benefit += MENU.DRINK.샴페인;
     }
     Console.print(OUTPUT.total_benefit);
     benefit == 0
@@ -103,7 +105,6 @@ const OutputView = {
 
   printEventBadge(badge) {
     Console.print(OUTPUT.event_badge);
-
     Console.print(badge);
   },
 

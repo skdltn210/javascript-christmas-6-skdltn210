@@ -15,10 +15,9 @@ export const OUTPUT = {
   total_benefit: "\n<총혜택 금액>",
   expected_payment: "\n<할인 후 예상 결제 금액>",
   event_badge: "\n<12월 이벤트 배지>",
-  champagne: "샴페인",
-  champagne_price: "25,000",
   special_discount_amount: "1,000",
-  month: "12월 ",
+  promotion_gift: "샴페인 1",
+  december: "12월 ",
   none: "없음",
   won: "원",
   unit: "개",
@@ -26,7 +25,6 @@ export const OUTPUT = {
   event_caution: "이벤트는 총 주문 금액이 10,000원 이상부터 적용됩니다.",
   order_caution:
     "음료만 주문할 수 없고 메뉴는 한번에 최대 20개까지 주문할 수 있습니다.",
-  one: " 1",
   minus: "-",
 };
 
