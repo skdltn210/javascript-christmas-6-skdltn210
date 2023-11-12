@@ -36,6 +36,7 @@
 - [x] OutputView 클래스
 
   - [x] printEventPlanner : 이벤트 플래너 인사 출력
+  - [x] printCaution : 이벤트 주의사항 출력
   - [x] printEventPreview : 이벤트 미리보기 메시지 출력
   - [x] printOrderMenu : 주문 메뉴 출력
   - [x] printOrderAmount : 할인 전 총주문 금액 출력
