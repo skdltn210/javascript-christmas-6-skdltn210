@@ -16,7 +16,6 @@ class EventController {
     OutputView.printEventPlanner();
     const expectedDate = await InputView.inputDate();
     const order = await InputView.inputOrder();
-
     this.#discount = new Discount(expectedDate);
     this.#orderMenu = new OrderMenu(order);
     OutputView.printEventPreview(expectedDate);
@@ -25,22 +24,20 @@ class EventController {
   previewEventBenefits() {
     OutputView.printOrderMenu(this.#orderMenu.getOrder());
     OutputView.printOrderAmount(this.#orderMenu.calculateTotalOrderAmount());
-    OutputView.printPromotionMenu(this.#orderMenu.checkChampagneGift());
-
+    OutputView.printPromotionMenu(this.#orderMenu.checkGift());
     OutputView.printPromotionDetails(
       this.#discount.calculateChristmasDiscount(),
       this.#discount.calculateWeekdayDiscount(this.#orderMenu.countDessert()),
       this.#discount.calculateWeekendDiscount(this.#orderMenu.countDrink()),
       this.#discount.calculateSpecialDiscount(),
-      this.#orderMenu.checkChampagneGift()
+      this.#orderMenu.checkGift()
     );
-
-    OutputView.printTotalBenefit(this.#discount.calculateTotalBenefit(this.#orderMenu.countDessert(), this.#orderMenu.countDrink()), this.#orderMenu.checkChampagneGift());
-
+    OutputView.printTotalBenefit(this.#discount.calculateTotalBenefit(this.#orderMenu.countDessert(), this.#orderMenu.countDrink()), this.#orderMenu.checkGift());
     OutputView.printExpectedPayment(
-      this.#orderMenu.calculateTotalOrderAmount() - this.#discount.calculateTotalBenefit(this.#orderMenu.countDessert(), this.#orderMenu.countDrink())
+      this.#orderMenu.calculateTotalOrderAmount(),
+      this.#discount.calculateTotalBenefit(this.#orderMenu.countDessert(), this.#orderMenu.countDrink())
     );
-    OutputView.printEventBadge(this.#discount.checkEventBadge(this.#discount.calculateTotalBenefit(this.#orderMenu.countDessert(), this.#orderMenu.countDrink())));
+    OutputView.printEventBadge(this.#discount.calculateTotalBenefit(this.#orderMenu.countDessert(), this.#orderMenu.countDrink()));
   }
 }
 

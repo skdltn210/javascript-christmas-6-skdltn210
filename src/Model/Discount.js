@@ -46,18 +46,5 @@ class Discount {
     totalBenefit = this.calculateChristmasDiscount() + this.calculateWeekdayDiscount(dessertCount) + this.calculateWeekendDiscount(mainCount) + this.calculateSpecialDiscount();
     return totalBenefit;
   }
-
-  checkEventBadge(totalBenefit) {
-    if (totalBenefit >= 20000) {
-      return BADGE.santa;
-    }
-    if (totalBenefit >= 10000) {
-      return BADGE.tree;
-    }
-    if (totalBenefit >= 5000) {
-      return BADGE.santa;
-    }
-    return OUTPUT.none;
-  }
 }
 export default Discount;

@@ -7,20 +7,21 @@ class OrderMenu {
     this.#orderMenu = orderMenu;
   }
 
+  getOrder() {
+    return this.#orderMenu;
+  }
+
   calculateTotalOrderAmount() {
     let totalOrderAmount = 0;
-
     Object.keys(MENU).forEach((menuCategory) => {
       const categoryMenu = MENU[menuCategory];
       totalOrderAmount += this.calculateMenuAmount(categoryMenu);
     });
-
     return totalOrderAmount;
   }
 
   calculateMenuAmount(categoryMenu) {
     let menuAmount = 0;
-
     Object.keys(categoryMenu).forEach((menuName) => {
       if (this.#orderMenu.hasOwnProperty(menuName)) {
         const menuCount = this.#orderMenu[menuName];
@@ -28,20 +29,15 @@ class OrderMenu {
         menuAmount += menuPrice * menuCount;
       }
     });
-
     return menuAmount;
   }
 
-  checkChampagneGift() {
+  checkGift() {
     const totalOrderAmount = this.calculateTotalOrderAmount();
     if (totalOrderAmount >= 120000) {
       return true;
     }
     return false;
-  }
-
-  getOrder() {
-    return this.#orderMenu;
   }
 
   countDessert() {
