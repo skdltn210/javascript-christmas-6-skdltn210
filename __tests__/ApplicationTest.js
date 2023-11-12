@@ -72,7 +72,7 @@ describe("기능 테스트", () => {
     expectLogContains(getOutput(logSpy), expected);
   });
 
-  test("전체 테스트", async () => {
+  test("전체 테스트1", async () => {
     const logSpy = getLogSpy();
     mockQuestions(["25", "시저샐러드-1,티본스테이크-1,크리스마스파스타-1,초코케이크-1,아이스크림-1,레드와인-2"]);
 
@@ -104,6 +104,35 @@ describe("기능 테스트", () => {
       "219,554원",
       "<12월 이벤트 배지>",
       "산타",
+    ];
+
+    expectLogContains(getOutput(logSpy), expected);
+  });
+
+  test("전체 테스트2", async () => {
+    const logSpy = getLogSpy();
+    mockQuestions(["26", "타파스-1"]);
+
+    const app = new App();
+    await app.run();
+
+    const expected = [
+      "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.",
+      "12월 26일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!",
+      "<주문 메뉴>",
+      "타파스 1개",
+      "<할인 전 총주문 금액>",
+      "5,500원",
+      "<증정 메뉴>",
+      "없음",
+      "<혜택 내역>",
+      "없음",
+      "<총혜택 금액>",
+      "0원",
+      "<할인 후 예상 결제 금액>",
+      "5,500원",
+      "<12월 이벤트 배지>",
+      "없음",
     ];
 
     expectLogContains(getOutput(logSpy), expected);
