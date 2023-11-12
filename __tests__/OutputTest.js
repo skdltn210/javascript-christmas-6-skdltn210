@@ -33,6 +33,7 @@ describe("출력 테스트", () => {
 
   test("printPromotionDetails 함수", () => {
     const logSpy = getLogSpy();
+    //12월 8일
     const christmasDiscount = 1700;
     const weekdayDiscount = 0;
     const weekendDiscount = 4046;

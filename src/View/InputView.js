@@ -27,6 +27,7 @@ const InputView = {
     }
   },
 
+  //입력받은 주문을 {메뉴:수량}의 형태로 바꿉니다.
   parseStringToOrder(input) {
     const orderDetails = {};
     input.split(",").forEach((order) => {

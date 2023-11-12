@@ -60,8 +60,6 @@
   - [x] DiscountTest
   - [x] OrderMenuTest
 
-## 추가한 기능
-
 ## 추가로 고려할 사항
 
 - [x] 클래스(객체)를 분리하는 연습
