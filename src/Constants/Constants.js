@@ -18,6 +18,10 @@ export const OUTPUT = {
 };
 
 export const PROMOTION = {
+  christmas_basic_discount: 1000,
+  christmas_per_day_discount: 100,
+  per_dessert_discount: 2023,
+  per_main_discount: 2023,
   special_discount_amount: 1000,
   gift: "샴페인",
   gift_amount: "1",

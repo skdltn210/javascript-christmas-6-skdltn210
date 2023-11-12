@@ -1,3 +1,4 @@
+import { PROMOTION } from "../Constants/Constants";
 class Discount {
   #expectedVisitDate;
 
@@ -8,7 +9,7 @@ class Discount {
   calculateChristmasDiscount() {
     let christmasDiscount = 0;
     if (this.#expectedVisitDate <= 25) {
-      christmasDiscount = 1000 + 100 * (this.#expectedVisitDate - 1);
+      christmasDiscount = PROMOTION.christmas_basic_discount + PROMOTION.christmas_per_day_discount * (this.#expectedVisitDate - 1);
     }
     return christmasDiscount;
   }
@@ -17,7 +18,7 @@ class Discount {
     let weekdayDiscount = 0;
     let isWeekday = !(this.#expectedVisitDate % 7 == 1 || this.#expectedVisitDate % 7 == 2);
     if (isWeekday) {
-      weekdayDiscount = 2023 * dessertCount;
+      weekdayDiscount = PROMOTION.per_dessert_discount * dessertCount;
     }
     return weekdayDiscount;
   }
@@ -26,7 +27,7 @@ class Discount {
     let weekendDiscount = 0;
     let isWeekend = this.#expectedVisitDate % 7 == 1 || this.#expectedVisitDate % 7 == 2;
     if (isWeekend) {
-      weekendDiscount = 2023 * mainCount;
+      weekendDiscount = PROMOTION.per_main_discount * mainCount;
     }
     return weekendDiscount;
   }
@@ -35,7 +36,7 @@ class Discount {
     let specialDiscount = 0;
     let isStar = this.#expectedVisitDate % 7 == 3 || this.#expectedVisitDate == 25;
     if (isStar) {
-      specialDiscount = 1000;
+      specialDiscount = PROMOTION.special_discount_amount;
     }
     return specialDiscount;
   }
