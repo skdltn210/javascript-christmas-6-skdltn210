@@ -8,6 +8,7 @@ const OutputView = {
 
   printCaution() {
     Console.print(OUTPUT.event_caution);
+    Console.print(OUTPUT.order_cation);
   },
 
   printEventPreview(day) {
