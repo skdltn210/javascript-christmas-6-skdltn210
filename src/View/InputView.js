@@ -1,5 +1,5 @@
 import { Console } from "@woowacourse/mission-utils";
-import { INPUT, ERROR } from "../Constants/Constants.js";
+import { INPUT, ERROR, OUTPUT } from "../Constants/Constants.js";
 import Validation from "../Validation/Validation.js";
 
 const InputView = {
@@ -16,7 +16,7 @@ const InputView = {
   },
 
   async inputOrder() {
-    const input = await Console.readLineAsync(INPUT.order_request);
+    const input = await Console.readLineAsync(INPUT.order_request + OUTPUT.order_caution);
     try {
       Validation.isValidOrder(input);
       const orderDetails = this.parseStringToOrder(input);
