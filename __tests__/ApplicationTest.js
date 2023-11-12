@@ -60,6 +60,18 @@ describe("기능 테스트", () => {
     expectLogContains(getOutput(logSpy), expected);
   });
 
+  test("혜택 금액 타이틀과 0원 출력", async () => {
+    const logSpy = getLogSpy();
+    mockQuestions(["26", "타파스-1,제로콜라-1"]);
+
+    const app = new App();
+    await app.run();
+
+    const expected = ["<총혜택 금액>" + LINE_SEPARATOR + "0원"];
+
+    expectLogContains(getOutput(logSpy), expected);
+  });
+
   test("전체 테스트", async () => {
     const logSpy = getLogSpy();
     mockQuestions(["25", "시저샐러드-1,티본스테이크-1,크리스마스파스타-1,초코케이크-1,아이스크림-1,레드와인-2"]);
