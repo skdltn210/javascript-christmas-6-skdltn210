@@ -64,16 +64,9 @@ const OutputView = {
 
   printEventBadge(totalBenefit) {
     Console.print(OUTPUT.december_event_badge);
-    if (totalBenefit >= 20000) {
-      Console.print(BADGE.santa);
-    }
-    if (totalBenefit >= 10000) {
-      Console.print(BADGE.tree);
-    }
-    if (totalBenefit >= 5000) {
-      Console.print(BADGE.santa);
-    }
-    return ECT.none;
+    let badge = totalBenefit >= 20000 ? BADGE.santa : totalBenefit >= 10000 ? BADGE.tree : totalBenefit >= 5000 ? BADGE.santa : ECT.none;
+    Console.print(badge);
   },
 };
+
 export default OutputView;

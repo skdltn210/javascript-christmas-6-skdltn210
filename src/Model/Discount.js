@@ -1,4 +1,3 @@
-import { BADGE, OUTPUT } from "../Constants/Constants.js";
 class Discount {
   #expectedVisitDate;
 

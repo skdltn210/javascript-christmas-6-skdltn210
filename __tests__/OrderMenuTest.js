@@ -9,11 +9,11 @@ describe("OrderMenu 클래스 테스트", () => {
 
   test("checkChampagneGift 함수", () => {
     const orderMenu = new OrderMenu({ 티본스테이크: 5 });
-    expect(orderMenu.checkChampagneGift()).toEqual(true);
+    expect(orderMenu.checkGift()).toEqual(true);
   });
 
   test("checkChampagneGift 함수", () => {
     const orderMenu = new OrderMenu({ 타파스: 1 });
-    expect(orderMenu.checkChampagneGift()).toEqual(false);
+    expect(orderMenu.checkGift()).toEqual(false);
   });
 });
