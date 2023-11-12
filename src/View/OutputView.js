@@ -1,5 +1,5 @@
 import { Console } from "@woowacourse/mission-utils";
-import { OUTPUT, MENU, EVENT } from "../Constants/Constants.js";
+import { OUTPUT, EVENT } from "../Constants/Constants.js";
 
 const OutputView = {
   printEventPlanner() {
@@ -19,7 +19,7 @@ const OutputView = {
 
   printOrderAmount(orderAmount) {
     Console.print(OUTPUT.order_amount);
-    Console.print(orderAmount + OUTPUT.won);
+    Console.print(orderAmount.toLocaleString() + OUTPUT.won);
   },
 
   printPromotionMenu() {
@@ -49,24 +49,33 @@ const OutputView = {
     }
     if (christmasDiscount != 0) {
       Console.print(
-        EVENT.christmas_discount + OUTPUT.minus + christmasDiscount + OUTPUT.won
+        EVENT.christmas_discount +
+          OUTPUT.minus +
+          christmasDiscount.toLocaleString() +
+          OUTPUT.won
       );
     }
     if (weekdayDiscount != 0) {
       Console.print(
-        EVENT.weekday_discount + OUTPUT.minus + weekdayDiscount + OUTPUT.won
+        EVENT.weekday_discount +
+          OUTPUT.minus +
+          weekdayDiscount.toLocaleString() +
+          OUTPUT.won
       );
     }
     if (weekendDiscount != 0) {
       Console.print(
-        EVENT.weekend_discount + OUTPUT.minus + weekendDiscount + OUTPUT.won
+        EVENT.weekend_discount +
+          OUTPUT.minus +
+          weekendDiscount.toLocaleString() +
+          OUTPUT.won
       );
     }
     if (specialDiscount != 0) {
       Console.print(
         EVENT.special_discount +
           OUTPUT.minus +
-          OUTPUT.special_discount_amount +
+          OUTPUT.special_discount_amount.toLocaleString() +
           OUTPUT.won
       );
     }
@@ -84,16 +93,17 @@ const OutputView = {
     Console.print(OUTPUT.total_benefit);
     benefit == 0
       ? Console.print(OUTPUT.none)
-      : Console.print(OUTPUT.minus + benefit + OUTPUT.won);
+      : Console.print(OUTPUT.minus + benefit.toLocaleString() + OUTPUT.won);
   },
 
   printExpectedPayment(expectedPayment) {
     Console.print(OUTPUT.expected_payment);
-    Console.print(expectedPayment + OUTPUT.won);
+    Console.print(expectedPayment.toLocaleString() + OUTPUT.won);
   },
 
   printEventBadge(badge) {
     Console.print(OUTPUT.event_badge);
+
     Console.print(badge);
   },
 
