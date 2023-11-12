@@ -25,10 +25,7 @@ class EventController {
   previewEventBenefits() {
     OutputView.printOrderMenu(this.#orderMenu.getOrder());
     OutputView.printOrderAmount(this.#orderMenu.calculateTotalOrderAmount());
-    OutputView.printPromotionMenu();
-    this.#orderMenu.checkChampagneGift()
-      ? OutputView.printChampagne()
-      : OutputView.printNone();
+    OutputView.printPromotionMenu(this.#orderMenu.checkChampagneGift());
 
     OutputView.printPromotionDetails(
       this.#discount.calculateChristmasDiscount(),
@@ -38,29 +35,12 @@ class EventController {
       this.#orderMenu.checkChampagneGift()
     );
 
-    OutputView.printTotalBenefit(
-      this.#discount.calculateTotalBenefit(
-        this.#orderMenu.countDessert(),
-        this.#orderMenu.countDrink()
-      ),
-      this.#orderMenu.checkChampagneGift()
-    );
+    OutputView.printTotalBenefit(this.#discount.calculateTotalBenefit(this.#orderMenu.countDessert(), this.#orderMenu.countDrink()), this.#orderMenu.checkChampagneGift());
 
     OutputView.printExpectedPayment(
-      this.#orderMenu.calculateTotalOrderAmount() -
-        this.#discount.calculateTotalBenefit(
-          this.#orderMenu.countDessert(),
-          this.#orderMenu.countDrink()
-        )
+      this.#orderMenu.calculateTotalOrderAmount() - this.#discount.calculateTotalBenefit(this.#orderMenu.countDessert(), this.#orderMenu.countDrink())
     );
-    OutputView.printEventBadge(
-      this.#discount.checkEventBadge(
-        this.#discount.calculateTotalBenefit(
-          this.#orderMenu.countDessert(),
-          this.#orderMenu.countDrink()
-        )
-      )
-    );
+    OutputView.printEventBadge(this.#discount.checkEventBadge(this.#discount.calculateTotalBenefit(this.#orderMenu.countDessert(), this.#orderMenu.countDrink())));
   }
 }
 

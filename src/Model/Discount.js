@@ -16,9 +16,7 @@ class Discount {
 
   calculateWeekdayDiscount(dessertCount) {
     let weekdayDiscount = 0;
-    let isWeekday = !(
-      this.#expectedVisitDate % 7 == 1 || this.#expectedVisitDate % 7 == 2
-    );
+    let isWeekday = !(this.#expectedVisitDate % 7 == 1 || this.#expectedVisitDate % 7 == 2);
     if (isWeekday) {
       weekdayDiscount = 2023 * dessertCount;
     }
@@ -27,8 +25,7 @@ class Discount {
 
   calculateWeekendDiscount(mainCount) {
     let weekendDiscount = 0;
-    let isWeekend =
-      this.#expectedVisitDate % 7 == 1 || this.#expectedVisitDate % 7 == 2;
+    let isWeekend = this.#expectedVisitDate % 7 == 1 || this.#expectedVisitDate % 7 == 2;
     if (isWeekend) {
       weekendDiscount = 2023 * mainCount;
     }
@@ -37,8 +34,7 @@ class Discount {
 
   calculateSpecialDiscount() {
     let specialDiscount = 0;
-    let isStar =
-      this.#expectedVisitDate % 7 == 3 || this.#expectedVisitDate == 25;
+    let isStar = this.#expectedVisitDate % 7 == 3 || this.#expectedVisitDate == 25;
     if (isStar) {
       specialDiscount = 1000;
     }
@@ -47,11 +43,7 @@ class Discount {
 
   calculateTotalBenefit(dessertCount, mainCount) {
     let totalBenefit = 0;
-    totalBenefit =
-      this.calculateChristmasDiscount() +
-      this.calculateWeekdayDiscount(dessertCount) +
-      this.calculateWeekendDiscount(mainCount) +
-      this.calculateSpecialDiscount();
+    totalBenefit = this.calculateChristmasDiscount() + this.calculateWeekdayDiscount(dessertCount) + this.calculateWeekendDiscount(mainCount) + this.calculateSpecialDiscount();
     return totalBenefit;
   }
 

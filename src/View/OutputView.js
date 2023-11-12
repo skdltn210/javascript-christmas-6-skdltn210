@@ -7,7 +7,7 @@ const OutputView = {
   },
 
   printEventPreview(day) {
-    Console.print(OUTPUT.december + day + OUTPUT.event_preview);
+    Console.print(OUTPUT.event_month + OUTPUT.blank + day + OUTPUT.event_preview);
   },
 
   printOrderMenu(orderDetails) {
@@ -18,73 +18,35 @@ const OutputView = {
   },
 
   printOrderAmount(orderAmount) {
-    Console.print(OUTPUT.order_amount);
+    Console.print(OUTPUT.total_amount_before_discount);
     Console.print(orderAmount.toLocaleString() + OUTPUT.won);
   },
 
   printPromotionMenu(isGift) {
-    Console.print(OUTPUT.promotion_menu);
-    isGift
-      ? Console.print(OUTPUT.promotion_gift + OUTPUT.unit)
-      : Console.print(OUTPUT.none);
+    Console.print(OUTPUT.gift_menu);
+    isGift ? Console.print(OUTPUT.gift + OUTPUT.blank + OUTPUT.gift_amount + OUTPUT.unit) : Console.print(OUTPUT.none);
   },
 
-  printPromotionDetails(
-    christmasDiscount,
-    weekdayDiscount,
-    weekendDiscount,
-    specialDiscount,
-    isgift
-  ) {
-    Console.print(OUTPUT.promotion_details);
-    let noDiscount =
-      christmasDiscount == 0 &&
-      weekdayDiscount == 0 &&
-      weekendDiscount == 0 &&
-      specialDiscount == 0 &&
-      isgift == false;
+  printPromotionDetails(christmasDiscount, weekdayDiscount, weekendDiscount, specialDiscount, isgift) {
+    Console.print(OUTPUT.benefit_details);
+    let noDiscount = christmasDiscount == 0 && weekdayDiscount == 0 && weekendDiscount == 0 && specialDiscount == 0 && isgift == false;
     if (noDiscount) {
       Console.print(OUTPUT.none);
     }
     if (christmasDiscount != 0) {
-      Console.print(
-        EVENT.christmas_discount +
-          OUTPUT.minus +
-          christmasDiscount.toLocaleString() +
-          OUTPUT.won
-      );
+      Console.print(EVENT.christmas_discount + OUTPUT.minus + christmasDiscount.toLocaleString() + OUTPUT.won);
     }
     if (weekdayDiscount != 0) {
-      Console.print(
-        EVENT.weekday_discount +
-          OUTPUT.minus +
-          weekdayDiscount.toLocaleString() +
-          OUTPUT.won
-      );
+      Console.print(EVENT.weekday_discount + OUTPUT.minus + weekdayDiscount.toLocaleString() + OUTPUT.won);
     }
     if (weekendDiscount != 0) {
-      Console.print(
-        EVENT.weekend_discount +
-          OUTPUT.minus +
-          weekendDiscount.toLocaleString() +
-          OUTPUT.won
-      );
+      Console.print(EVENT.weekend_discount + OUTPUT.minus + weekendDiscount.toLocaleString() + OUTPUT.won);
     }
     if (specialDiscount != 0) {
-      Console.print(
-        EVENT.special_discount +
-          OUTPUT.minus +
-          OUTPUT.special_discount_amount.toLocaleString() +
-          OUTPUT.won
-      );
+      Console.print(EVENT.special_discount + OUTPUT.minus + OUTPUT.special_discount_amount.toLocaleString() + OUTPUT.won);
     }
     if (isgift) {
-      Console.print(
-        EVENT.promotion +
-          OUTPUT.minus +
-          MENU.DRINK.샴페인.toLocaleString() +
-          OUTPUT.won
-      );
+      Console.print(EVENT.promotion + OUTPUT.minus + MENU.DRINK.샴페인.toLocaleString() + OUTPUT.won);
     }
   },
 
@@ -92,10 +54,8 @@ const OutputView = {
     if (isgift) {
       benefit += MENU.DRINK.샴페인;
     }
-    Console.print(OUTPUT.total_benefit);
-    benefit == 0
-      ? Console.print(OUTPUT.none)
-      : Console.print(OUTPUT.minus + benefit.toLocaleString() + OUTPUT.won);
+    Console.print(OUTPUT.total_benefit_amount);
+    benefit == 0 ? Console.print(OUTPUT.none) : Console.print(OUTPUT.minus + benefit.toLocaleString() + OUTPUT.won);
   },
 
   printExpectedPayment(expectedPayment) {
@@ -104,7 +64,7 @@ const OutputView = {
   },
 
   printEventBadge(badge) {
-    Console.print(OUTPUT.event_badge);
+    Console.print(OUTPUT.december_event_badge);
     Console.print(badge);
   },
 

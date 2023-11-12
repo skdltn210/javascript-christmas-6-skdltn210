@@ -16,13 +16,7 @@ class Validation {
     let sameMenu = Object.keys(orderDetails).length == input.split(",").length;
     let onlyDrink = this.isOnlyDrink(orderDetails);
     let tooManyOrder = this.isTooManyOrder(orderDetails);
-    let error =
-      !validMenu ||
-      !validAmount ||
-      !validForm ||
-      !sameMenu ||
-      !onlyDrink ||
-      !tooManyOrder;
+    let error = !validMenu || !validAmount || !validForm || !sameMenu || !onlyDrink || !tooManyOrder;
     if (error) {
       throw new Error();
     }
@@ -33,13 +27,7 @@ class Validation {
     const mains = Object.keys(MENU.MAIN);
     const desserts = Object.keys(MENU.DESSERT);
     const drinks = Object.keys(MENU.DRINK);
-    return Object.keys(orderDetails).every(
-      (key) =>
-        appetizers.includes(key) ||
-        mains.includes(key) ||
-        desserts.includes(key) ||
-        drinks.includes(key)
-    );
+    return Object.keys(orderDetails).every((key) => appetizers.includes(key) || mains.includes(key) || desserts.includes(key) || drinks.includes(key));
   }
 
   static isValidForm(orderDetails) {
@@ -48,11 +36,7 @@ class Validation {
     }
     const keys = Object.keys(orderDetails);
     keys.forEach((key) => {
-      if (
-        !Object.prototype.hasOwnProperty.call(orderDetails, key) ||
-        typeof key !== "string" ||
-        typeof orderDetails[key] !== "number"
-      ) {
+      if (!Object.prototype.hasOwnProperty.call(orderDetails, key) || typeof key !== "string" || typeof orderDetails[key] !== "number") {
         return false;
       }
     });

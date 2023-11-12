@@ -1,31 +1,29 @@
 export const INPUT = {
-  expected_date:
-    "12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)\n",
-  order_request:
-    "주문하실 메뉴를 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)\n",
+  expected_visit_date: "12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)\n",
+  order_request: "주문하실 메뉴를 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)\n",
 };
 
 export const OUTPUT = {
   event_planner: "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.",
   event_preview: "일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!",
   order_menu: "\n<주문 메뉴>",
-  order_amount: "\n<할인 전 총주문 금액>",
-  promotion_menu: "\n<증정 메뉴>",
-  promotion_details: "\n<혜택 내역>",
-  total_benefit: "\n<총혜택 금액>",
+  total_amount_before_discount: "\n<할인 전 총주문 금액>",
+  gift_menu: "\n<증정 메뉴>",
+  benefit_details: "\n<혜택 내역>",
+  total_benefit_amount: "\n<총혜택 금액>",
   expected_payment: "\n<할인 후 예상 결제 금액>",
-  event_badge: "\n<12월 이벤트 배지>",
-  special_discount_amount: "1,000",
-  promotion_gift: "샴페인 1",
-  december: "12월 ",
+  december_event_badge: "\n<12월 이벤트 배지>",
+  special_discount_amount: "1000",
+  gift: "샴페인",
+  gift_amount: "1",
+  event_month: "12월",
+  blank: " ",
   none: "없음",
   won: "원",
   unit: "개",
-  empty_string: "",
-  event_caution: "이벤트는 총 주문 금액이 10,000원 이상부터 적용됩니다.",
-  order_caution:
-    "음료만 주문할 수 없고 메뉴는 한번에 최대 20개까지 주문할 수 있습니다.",
   minus: "-",
+  event_caution: "이벤트는 총 주문 금액이 10,000원 이상부터 적용됩니다.",
+  order_caution: "음료만 주문할 수 없고 메뉴는 한번에 최대 20개까지 주문할 수 있습니다.",
 };
 
 export const ERROR = {

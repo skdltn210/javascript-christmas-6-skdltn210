@@ -4,7 +4,7 @@ import Validation from "../Validation/Validation.js";
 
 const InputView = {
   async inputDate() {
-    const input = await Console.readLineAsync(INPUT.expected_date);
+    const input = await Console.readLineAsync(INPUT.expected_visit_date);
     const date = Number(input);
     try {
       Validation.isValidDate(date);
