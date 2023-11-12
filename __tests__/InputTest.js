@@ -45,4 +45,15 @@ describe("입력 테스트", () => {
     expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(ERROR.date_error));
     expect(MissionUtils.Console.readLineAsync).toHaveBeenCalledTimes(2);
   });
+
+  test("잘못된 주문을 입력했을 때 다시 입력 받고, 올바른 주문를 입력했을 때 정확한 값 반환", async () => {
+    mockQuestions(["짜장면-1", "양송이수프-1"]);
+    const logSpy = getLogSpy();
+
+    const result = await InputView.inputOrder();
+
+    expect(result).toStrictEqual({ 양송이수프: 1 });
+    expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(ERROR.order_error));
+    expect(MissionUtils.Console.readLineAsync).toHaveBeenCalledTimes(2);
+  });
 });
