@@ -13,17 +13,23 @@ export const OUTPUT = {
   total_benefit_amount: "\n<총혜택 금액>",
   expected_payment: "\n<할인 후 예상 결제 금액>",
   december_event_badge: "\n<12월 이벤트 배지>",
-  special_discount_amount: "1000",
+  event_caution: "이벤트는 총 주문 금액이 10,000원 이상부터 적용됩니다.",
+  order_caution: "음료만 주문할 수 없고 메뉴는 한번에 최대 20개까지 주문할 수 있습니다.",
+};
+
+export const PROMOTION = {
+  special_discount_amount: 1000,
   gift: "샴페인",
   gift_amount: "1",
   event_month: "12월",
+};
+
+export const ECT = {
   blank: " ",
   none: "없음",
   won: "원",
   unit: "개",
   minus: "-",
-  event_caution: "이벤트는 총 주문 금액이 10,000원 이상부터 적용됩니다.",
-  order_caution: "음료만 주문할 수 없고 메뉴는 한번에 최대 20개까지 주문할 수 있습니다.",
 };
 
 export const ERROR = {
@@ -59,7 +65,7 @@ export const EVENT = {
   weekday_discount: "평일 할인: ",
   weekend_discount: "주말 할인: ",
   special_discount: "특별 할인: ",
-  promotion: "증정 이벤트: ",
+  gift_event: "증정 이벤트: ",
 };
 
 export const BADGE = {

@@ -1,5 +1,5 @@
 import { Console } from "@woowacourse/mission-utils";
-import { OUTPUT, EVENT, MENU } from "../Constants/Constants.js";
+import { OUTPUT, EVENT, MENU, BADGE, PROMOTION, ECT } from "../Constants/Constants.js";
 
 const OutputView = {
   printEventPlanner() {
@@ -7,46 +7,45 @@ const OutputView = {
   },
 
   printEventPreview(day) {
-    Console.print(OUTPUT.event_month + OUTPUT.blank + day + OUTPUT.event_preview);
+    Console.print(PROMOTION.event_month + ECT.blank + day + OUTPUT.event_preview);
   },
 
   printOrderMenu(orderDetails) {
     Console.print(OUTPUT.order_menu);
     Object.entries(orderDetails).forEach(([menu, amount]) => {
-      Console.print(`${menu} ${amount}` + OUTPUT.unit);
+      Console.print(`${menu} ${amount}` + ECT.unit);
     });
   },
 
   printOrderAmount(orderAmount) {
     Console.print(OUTPUT.total_amount_before_discount);
-    Console.print(orderAmount.toLocaleString() + OUTPUT.won);
+    Console.print(orderAmount.toLocaleString() + ECT.won);
   },
 
   printPromotionMenu(isGift) {
     Console.print(OUTPUT.gift_menu);
-    isGift ? Console.print(OUTPUT.gift + OUTPUT.blank + OUTPUT.gift_amount + OUTPUT.unit) : Console.print(OUTPUT.none);
+    isGift ? Console.print(PROMOTION.gift + ECT.blank + PROMOTION.gift_amount + ECT.unit) : Console.print(ECT.none);
   },
 
   printPromotionDetails(christmasDiscount, weekdayDiscount, weekendDiscount, specialDiscount, isgift) {
     Console.print(OUTPUT.benefit_details);
     let noDiscount = christmasDiscount == 0 && weekdayDiscount == 0 && weekendDiscount == 0 && specialDiscount == 0 && isgift == false;
     if (noDiscount) {
-      Console.print(OUTPUT.none);
+      Console.print(ECT.none);
+      return;
     }
-    if (christmasDiscount != 0) {
-      Console.print(EVENT.christmas_discount + OUTPUT.minus + christmasDiscount.toLocaleString() + OUTPUT.won);
-    }
-    if (weekdayDiscount != 0) {
-      Console.print(EVENT.weekday_discount + OUTPUT.minus + weekdayDiscount.toLocaleString() + OUTPUT.won);
-    }
-    if (weekendDiscount != 0) {
-      Console.print(EVENT.weekend_discount + OUTPUT.minus + weekendDiscount.toLocaleString() + OUTPUT.won);
-    }
-    if (specialDiscount != 0) {
-      Console.print(EVENT.special_discount + OUTPUT.minus + OUTPUT.special_discount_amount.toLocaleString() + OUTPUT.won);
-    }
+    this.printDiscount(EVENT.christmas_discount, christmasDiscount);
+    this.printDiscount(EVENT.weekday_discount, weekdayDiscount);
+    this.printDiscount(EVENT.weekend_discount, weekendDiscount);
+    this.printDiscount(EVENT.special_discount, PROMOTION.special_discount_amount);
     if (isgift) {
-      Console.print(EVENT.promotion + OUTPUT.minus + MENU.DRINK.샴페인.toLocaleString() + OUTPUT.won);
+      Console.print(EVENT.gift_event + ECT.minus + MENU.DRINK.샴페인.toLocaleString() + ECT.won);
+    }
+  },
+
+  printDiscount(event, discount) {
+    if (discount) {
+      Console.print(event + ECT.minus + discount.toLocaleString() + ECT.won);
     }
   },
 
@@ -55,21 +54,26 @@ const OutputView = {
       benefit += MENU.DRINK.샴페인;
     }
     Console.print(OUTPUT.total_benefit_amount);
-    benefit == 0 ? Console.print(OUTPUT.none) : Console.print(OUTPUT.minus + benefit.toLocaleString() + OUTPUT.won);
+    benefit == 0 ? Console.print(ECT.none) : Console.print(ECT.minus + benefit.toLocaleString() + ECT.won);
   },
 
-  printExpectedPayment(expectedPayment) {
+  printExpectedPayment(totalOrderAmount, totalBenefit) {
     Console.print(OUTPUT.expected_payment);
-    Console.print(expectedPayment.toLocaleString() + OUTPUT.won);
+    Console.print((totalOrderAmount - totalBenefit).toLocaleString() + ECT.won);
   },
 
-  printEventBadge(badge) {
+  printEventBadge(totalBenefit) {
     Console.print(OUTPUT.december_event_badge);
-    Console.print(badge);
-  },
-
-  printNone() {
-    Console.print(OUTPUT.none);
+    if (totalBenefit >= 20000) {
+      Console.print(BADGE.santa);
+    }
+    if (totalBenefit >= 10000) {
+      Console.print(BADGE.tree);
+    }
+    if (totalBenefit >= 5000) {
+      Console.print(BADGE.santa);
+    }
+    return ECT.none;
   },
 };
 export default OutputView;
