@@ -6,6 +6,10 @@ const OutputView = {
     Console.print(OUTPUT.event_planner);
   },
 
+  printCaution() {
+    Console.print(OUTPUT.event_caution);
+  },
+
   printEventPreview(day) {
     Console.print(PROMOTION.event_month + ECT.blank + day + OUTPUT.event_preview);
   },

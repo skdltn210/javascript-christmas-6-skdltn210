@@ -15,6 +15,7 @@ class EventController {
   async inputDateAndOrder() {
     OutputView.printEventPlanner();
     const expectedDate = await InputView.inputDate();
+    OutputView.printCaution();
     const order = await InputView.inputOrder();
     this.#discount = new Discount(expectedDate);
     this.#orderMenu = new OrderMenu(order);
