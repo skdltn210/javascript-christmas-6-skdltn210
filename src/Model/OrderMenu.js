@@ -1,4 +1,4 @@
-import { MENU } from "../Constants/Constants.js";
+import { MENU, PROMOTION } from "../Constants/Constants.js";
 
 class OrderMenu {
   #orderMenu;
@@ -34,7 +34,7 @@ class OrderMenu {
 
   checkGift() {
     const totalOrderAmount = this.calculateTotalOrderAmount();
-    if (totalOrderAmount >= 120000) {
+    if (totalOrderAmount >= PROMOTION.gift_threshold_amount) {
       return true;
     }
     return false;

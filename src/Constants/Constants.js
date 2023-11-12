@@ -24,6 +24,8 @@ export const PROMOTION = {
   per_dessert_discount: 2023,
   per_main_discount: 2023,
   special_discount_amount: 1000,
+  gift_threshold_amount: 120000,
+  max_order: 20,
   gift: "샴페인",
   gift_amount: "1",
   event_month: "12월",

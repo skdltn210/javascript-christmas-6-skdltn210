@@ -1,4 +1,4 @@
-import { MENU } from "../Constants/Constants.js";
+import { MENU, PROMOTION } from "../Constants/Constants.js";
 
 class Validation {
   static isValidDate(date) {
@@ -60,7 +60,7 @@ class Validation {
     values.forEach((value) => {
       menuCount += value;
     });
-    if (menuCount > 20) {
+    if (menuCount > PROMOTION.max_order) {
       return false;
     }
     return true;
