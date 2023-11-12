@@ -1,4 +1,4 @@
-import { PROMOTION } from "../Constants/Constants";
+import { PROMOTION } from "../Constants/Constants.js";
 class Discount {
   #expectedVisitDate;
 
