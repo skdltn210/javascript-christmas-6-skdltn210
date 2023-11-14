@@ -12,9 +12,9 @@ class Validation {
   static isValidOrder(input) {
     const orderDetails = InputView.parseStringToOrder(input);
     let validMenu = this.isValidMenu(orderDetails);
-    let validAmount = Object.values(orderDetails).every((value) => value >= 1);
+    let validAmount = Object.values(orderDetails).every((value) => value >= 1); // 각 메뉴의 수량이 1 이상인지 판단합니다.
     let validForm = this.isValidForm(orderDetails);
-    let sameMenu = Object.keys(orderDetails).length == input.split(",").length;
+    let sameMenu = Object.keys(orderDetails).length == input.split(",").length; // 중복된 메뉴가 주문되었는지 판단합니다.
     let onlyDrink = this.isOnlyDrink(orderDetails);
     let tooManyOrder = this.isTooManyOrder(orderDetails);
     let error = !validMenu || !validAmount || !validForm || !sameMenu || !onlyDrink || !tooManyOrder;
