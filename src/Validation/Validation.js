@@ -1,4 +1,5 @@
 import { MENU, PROMOTION } from "../Constants/Constants.js";
+import InputView from "../View/InputView.js";
 
 class Validation {
   static isValidDate(date) {
@@ -9,7 +10,7 @@ class Validation {
   }
 
   static isValidOrder(input) {
-    const orderDetails = this.parseStringToOrder(input);
+    const orderDetails = InputView.parseStringToOrder(input);
     let validMenu = this.isValidMenu(orderDetails);
     let validAmount = Object.values(orderDetails).every((value) => value >= 1);
     let validForm = this.isValidForm(orderDetails);
@@ -64,16 +65,6 @@ class Validation {
       return false;
     }
     return true;
-  }
-
-  //입력받은 주문을 {메뉴:수량}의 형태로 바꿉니다.
-  static parseStringToOrder(input) {
-    const orderDetails = {};
-    input.split(",").forEach((order) => {
-      const [menu, amount] = order.split("-").map((menu) => menu.trim());
-      orderDetails[menu] = parseInt(amount);
-    });
-    return orderDetails;
   }
 }
 export default Validation;
