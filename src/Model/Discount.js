@@ -8,7 +8,7 @@ class Discount {
 
   calculateChristmasDiscount() {
     let christmasDiscount = 0;
-    if (this.#expectedVisitDate <= 25) {
+    if (this.#expectedVisitDate <= PROMOTION.christmas_date) {
       christmasDiscount = PROMOTION.christmas_basic_discount + PROMOTION.christmas_per_day_discount * (this.#expectedVisitDate - 1);
     }
     return christmasDiscount;

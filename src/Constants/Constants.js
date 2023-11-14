@@ -26,6 +26,7 @@ export const PROMOTION = {
   special_discount_amount: 1000,
   gift_threshold_amount: 120000,
   max_order: 20,
+  christmas_date: 25,
   gift: "샴페인",
   gift_amount: "1",
   event_month: "12월",
